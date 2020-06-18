@@ -1,0 +1,13 @@
+apiVersion: monitoring.com/v1alpha1
+kind: Monitoring
+metadata:
+  name: example-monitoring
+spec:
+  teamName: example-monitoring
+  monitoringNamespace: example-monitoring
+  grafana:
+    installType: classic
+    exposeRoute: true
+  prometheus:
+    installType: classic
+    exposeRoute: true

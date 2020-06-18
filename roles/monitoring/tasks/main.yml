@@ -1,0 +1,19 @@
+---
+# tasks file for monitoring
+---
+- name: create namespaces related to monitoring crd
+  k8s:
+    state: present
+    merge_type: merge
+    definition:
+      kind: Namespace
+      apiVersion: v1
+      metadata:
+        name: "{{ monitoringNamespace }}"
+        labels:
+          monitoringOpertor_NS: "true"
+
+# new ephemeral_namespace created => create associated namespace and cronjob
+- name: create monitoring namespace associated to monitoring CRD using operators
+  import_tasks: configure_prometheus_by_operators.yaml
+  when: prometheus.installType == "operator"

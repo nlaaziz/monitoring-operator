@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  generation: 4
+  labels:
+    prometheus: k8s
+    team: dpt
+  name: prometheus
+  namespace: "{{ monitoringNamespace }}"
+spec:
+  replicas: 1
+  ruleSelector: {}
+  securityContext: {}
+  serviceAccountName: prometheus-k8s
+  serviceMonitorSelector: {}
+  storage:
+    volumeClaimTemplate:
+      spec:
+        resources:
+          requests:
+            storage: 1Gi

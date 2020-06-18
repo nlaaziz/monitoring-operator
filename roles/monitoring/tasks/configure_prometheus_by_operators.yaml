@@ -1,0 +1,41 @@
+- name: deploy operator group
+  k8s:
+    namespace: "{{ monitoringNamespace }}"
+    definition: "{{lookup('template', 'operator-group.yaml')}}"
+    state: present
+
+- name: deploy csr-cr
+  k8s:
+    namespace: "{{ monitoringNamespace }}"
+    definition: "{{lookup('template', 'csc-cr.yaml')}}"
+    state: present
+
+- name: deploy operator subscription
+  k8s:
+    namespace: "{{ monitoringNamespace }}"
+    definition: "{{lookup('template', 'operator-sub.yaml')}}"
+    state: present
+
+- name: deploy prometheus rbac
+  k8s:
+    namespace: "{{ monitoringNamespace }}"
+    definition: "{{lookup('template', 'prometheus-rbac.yaml')}}"
+    state: present
+
+- name: deploy prometheus rolebinding
+  k8s:
+    namespace: "{{ monitoringNamespace }}"
+    definition: "{{lookup('template', 'prometheus-role-binding.yaml')}}"
+    state: present
+
+- name: deploy prometheus instance
+  k8s:
+    namespace: "{{ monitoringNamespace }}"
+    definition: "{{lookup('template', 'prometheus-instance.yaml')}}"
+    state: present
+
+- name: deploy prometheus service monitor
+  k8s:
+    namespace: "{{ monitoringNamespace }}"
+    definition: "{{lookup('template', 'prometheus-service-monitor.yaml')}}"
+    state: present
