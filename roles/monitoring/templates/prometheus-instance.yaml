@@ -6,7 +6,7 @@ metadata:
     prometheus: k8s
     team: dpt
   name: prometheus
-  namespace: "{{ monitoringNamespace }}"
+  namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
 spec:
   replicas: 1
   ruleSelector: {}

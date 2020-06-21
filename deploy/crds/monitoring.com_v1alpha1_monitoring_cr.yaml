@@ -6,8 +6,8 @@ spec:
   teamName: example-monitoring
   monitoringNamespace: example-monitoring
   grafana:
-    installType: classic
+    installType: operator
     exposeRoute: true
   prometheus:
-    installType: classic
+    installType: operator
     exposeRoute: true

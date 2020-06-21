@@ -8,5 +8,5 @@ subjects:
   namespace: monitoring-operator
 roleRef:
   kind: ClusterRole
-  name: cluster-admin
+  name:  monitoring-operator
   apiGroup: rbac.authorization.k8s.io

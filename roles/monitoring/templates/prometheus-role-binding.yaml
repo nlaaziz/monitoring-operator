@@ -9,4 +9,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: prometheus-k8s
-  namespace: "{{ monitoringNamespace }}"
+  namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"

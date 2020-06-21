@@ -1,0 +1,29 @@
+- name: deploy rbac
+  k8s:
+    namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
+    definition: "{{lookup('template', 'rbac.yaml')}}"
+    state: present
+
+- name: deploy rolebinding
+  k8s:
+    namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
+    definition: "{{lookup('template', 'rolebinding.yaml')}}"
+    state: present
+
+- name: deploy prometheus scraper
+  k8s:
+    namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
+    definition: "{{lookup('template', 'prometheus-scraper.yaml')}}"
+    state: present
+
+- name: deploy prometheus instance
+  k8s:
+    namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
+    definition: "{{lookup('template', 'prometheus-deployment.yaml')}}"
+    state: present
+
+- name: deploy prometheus service
+  k8s:
+    namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
+    definition: "{{lookup('template', 'prometheus-svc.yaml')}}"
+    state: present

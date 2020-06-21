@@ -1,19 +1,47 @@
----
-# tasks file for monitoring
----
+# - name: Print some debug information
+#   vars:
+#     msg: |
+#       Module Variables ("vars"):
+#       --------------------------------
+#       {{ vars | to_nice_json }}
+#
+#       Environment Variables ("environment"):
+#       --------------------------------
+#       {{ environment | to_nice_json }}
+#
+#       GROUP NAMES Variables ("group_names"):
+#       --------------------------------
+#       {{ group_names | to_nice_json }}
+#
+#       GROUPS Variables ("groups"):
+#       --------------------------------
+#       {{ groups | to_nice_json }}
+#
+#       HOST Variables ("hostvars"):
+#       --------------------------------
+#       {{ hostvars | to_nice_json }}
+#
+#   debug:
+#     msg: "{{ msg.split('\n') }}"
+#   tags: debug_info
+# #
 - name: create namespaces related to monitoring crd
   k8s:
     state: present
-    merge_type: merge
-    definition:
-      kind: Namespace
-      apiVersion: v1
-      metadata:
-        name: "{{ monitoringNamespace }}"
-        labels:
-          monitoringOpertor_NS: "true"
+    definition: "{{lookup('template', 'namespace-monitoring.yaml')}}"
 
-# new ephemeral_namespace created => create associated namespace and cronjob
-- name: create monitoring namespace associated to monitoring CRD using operators
-  import_tasks: configure_prometheus_by_operators.yaml
-  when: prometheus.installType == "operator"
+- name: create prometheus using operators
+  import_tasks: configure_prometheus_operators_way.yaml
+  when: _monitoring_com_monitoring_spec.prometheus.installType == "operator"
+
+- name: create grafana using operators
+  import_tasks: configure_grafana_operators_way.yaml
+  when: _monitoring_com_monitoring_spec.grafana.installType == "operator"
+
+- name: create prometheus classic way
+  import_tasks: configure_prometheus_classic_way.yaml
+  when: _monitoring_com_monitoring_spec.prometheus.installType == "classic"
+
+- name: create grafana classic way
+  import_tasks: configure_grafana_classic_way.yaml
+  when: _monitoring_com_monitoring_spec.grafana.installType == "classic"

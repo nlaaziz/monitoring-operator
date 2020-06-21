@@ -1,0 +1,12 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
+  labels:
+    monitoringOpertor_NS: 'true'
+  annotations:
+    openshift.io/description: ''
+    openshift.io/display-name: ''
+spec:
+  finalizers:
+    - kubernetes

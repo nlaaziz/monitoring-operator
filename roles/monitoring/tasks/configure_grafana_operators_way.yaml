@@ -1,0 +1,17 @@
+- name: deploy grafana operator group
+  k8s:
+    namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
+    definition: "{{lookup('template', 'grafana-operator-group.yaml')}}"
+    state: present
+
+- name: deploy grafana operator subscription
+  k8s:
+    namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
+    definition: "{{lookup('template', 'grafana-operator-sub.yaml')}}"
+    state: present
+
+- name: deploy grafana csr-cr
+  k8s:
+    namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
+    definition: "{{lookup('template', 'grafana-csc-cr.yaml')}}"
+    state: present

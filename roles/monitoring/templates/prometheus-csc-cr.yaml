@@ -4,7 +4,7 @@ metadata:
   name: prometheus
   namespace: openshift-marketplace
 spec:
-  targetNamespace: "{{ monitoringNamespace }}"
+  targetNamespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
   packages: prometheus
   source: community-operators
   publisher: Community

@@ -6,7 +6,7 @@ metadata:
     k8s-app: prometheus
     team: dpt
   name: app-metrics
-  namespace: "{{ monitoringNamespace }}"
+  namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
 spec:
   endpoints:
     - interval: 30s
