@@ -12,6 +12,8 @@ Each team will have its own monitoring namespace, in which, a prometheus and gra
 are deployed. Then instances of grafana and prometheus are created and can be exposed to access
 team application metrics.
 
+This project is still in developement.
+
 ## Monitoring Custom Ressource Definition
 
 The custom resource definition 'monitoring' helps give team specifications to the operator.
@@ -135,3 +137,14 @@ spec:
       port: 80
       targetPort: 9376
 ```
+
+### TODO:
+Give users full ability to create CRDs for grafana and prometheus operators through monitoring CRD, such as: ServiceMonitors, Alertmanager, GrafanaDashboard, GrafanaDatasource
+
+see CRDs prometheus for more details:
+
+https://github.com/openshift/prometheus-operator#customresourcedefinitions
+
+see CRDs grafana for more details:
+
+https://github.com/integr8ly/grafana-operator#supported-custom-resources
