@@ -22,5 +22,5 @@ spec:
     any: true
   selector:
     matchLabels:
-      supervision: 'true'
-      team: sofa
+      monitoring: 'true'
+      teamName: ${{ _monitoring_com_monitoring_spec.teamName }}
