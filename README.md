@@ -104,7 +104,7 @@ routes:
 ![](doc/images/team-business-routes.png)
 
 
-###### Accessible prometheus and grafana using routes:
+###### Each team has its own grafana and prometheus accessible via routes:
 
 ![](doc/images/prometheus.png)
 
