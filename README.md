@@ -12,8 +12,6 @@ Each team will have its own monitoring namespace, in which, a prometheus and gra
 are deployed. Then instances of grafana and prometheus are created and can be exposed to access
 team application metrics.
 
-This project is still in developement.
-
 ## Monitoring Custom Ressource Definition
 
 The custom resource definition 'monitoring' helps give team specifications to the operator.
