@@ -108,8 +108,7 @@ routes:
 
 ![alt text](https://github.com/nlaaziz/monitoring-operator/tree/master/doc/images/prometheus.png?raw=true)
 
-![alt text](https://github.com/nlaaziz/monitoring-operator/tree/master/doc/images/grafana.png?raw=true)
-
+![grafana](https://user-images.githubusercontent.com/54750535/85340378-49b07400-b4e6-11ea-9b58-a86ad3f952b0.png)
 
 #### When deploying applications, each team should add these labels to their services:
 
