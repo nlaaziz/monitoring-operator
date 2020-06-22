@@ -34,6 +34,13 @@
     definition: "{{lookup('template', 'prometheus-instance.yaml')}}"
     state: present
 
+- name: expose route prometheus instance
+  k8s:
+    namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"
+    definition: "{{lookup('template', 'prometheus-route.yaml')}}"
+    state: present
+  when: _monitoring_com_monitoring_spec.prometheus.exposeRoute == "true"
+
 - name: deploy prometheus service monitor
   k8s:
     namespace: "{{ _monitoring_com_monitoring_spec.monitoringNamespace }}"

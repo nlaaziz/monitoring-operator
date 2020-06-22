@@ -1,12 +1,13 @@
 apiVersion: monitoring.com/v1alpha1
 kind: Monitoring
 metadata:
-  name: example-monitoring
+  name: team-development-monitoring
 spec:
-  teamName: example-monitoring
-  monitoringNamespace: example-monitoring
+  teamName: team-development
+  monitoringNamespace: team-development-monitoring
   grafana:
     installType: operator
+    exposeRoute: true
   prometheus:
     installType: operator
     exposeRoute: true

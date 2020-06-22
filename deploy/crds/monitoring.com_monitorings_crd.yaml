@@ -47,8 +47,6 @@ spec:
               properties:
                 installType:
                   type: string
-                exposeRoute:
-                  type: boolean
             prometheus:
               type: object
               description: Spec configures monitoring operator
