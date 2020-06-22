@@ -87,28 +87,28 @@ team-development-monitoring                  Active
 
 operators:
 
-![alt text](https://github.com/nlaaziz/monitoring-operator/tree/master/doc/images/team-dev-monitor.png?raw=true)
+![](doc/images/team-dev-monitor.png)
 
 routes:
 
-![alt text](https://github.com/nlaaziz/monitoring-operator/tree/master/doc/images/team-dev-routes.png?raw=true)
+![](doc/images/team-dev-routes.png)
 
 ###### Team business:
 
 operators:
 
-![alt text](https://github.com/nlaaziz/monitoring-operator/tree/master/doc/images/team-business-monitor.png?raw=true)
+![](doc/images/team-business-monitor.png)
 
 routes:
 
-![alt text](https://github.com/nlaaziz/monitoring-operator/tree/master/doc/images/team-business-routes.png?raw=true)
+![](doc/images/team-business-routes.png)
 
 
 ###### Accessible prometheus and grafana using routes:
 
 ![](doc/images/prometheus.png)
 
-![grafana](https://user-images.githubusercontent.com/54750535/85340378-49b07400-b4e6-11ea-9b58-a86ad3f952b0.png)
+![](doc/images/grafana.png)
 
 #### When deploying applications, each team should add these labels to their services:
 
