@@ -106,7 +106,7 @@ routes:
 
 ###### Accessible prometheus and grafana using routes:
 
-![alt text](https://github.com/nlaaziz/monitoring-operator/tree/master/doc/images/prometheus.png?raw=true)
+![](doc/images/prometheus.png)
 
 ![grafana](https://user-images.githubusercontent.com/54750535/85340378-49b07400-b4e6-11ea-9b58-a86ad3f952b0.png)
 
